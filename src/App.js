@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import ShopPage from './pages/ShopPage';
+import ShopingCartPage from './pages/ShopingCartPage';
+import HistoryPage from './pages/HistoryPage';
+import CouponsPage from './pages/CouponsPage';
+import { Route, Routes } from 'react-router-dom';
+import { Suspense } from 'react';
+import Navigation from './component/Navigation/Navigation';
+import Loader from './component/Loader/Loader';
+import Layout from './component/Loyaut/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<ShopPage />} />
+            <Route path="/shopingcart" element={<ShopingCartPage />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/coupons" element={<CouponsPage/>}/>
+            <Route path="*" element={<Navigation to="/" replace />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
