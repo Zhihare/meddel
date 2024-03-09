@@ -1,8 +1,14 @@
 import React from 'react'
+import { ShopPageConteiner } from './ShopPage.styled'
+import ShopingCartForm from '../component/ShopingCardForm/ShopingCartForm'
+import Deliveri from '../component/Deliveri/Deliveri'
 
 const ShopingCartPage = () => {
   return (
-    <div>ShopingCartPage</div>
+    <ShopPageConteiner>
+       <ShopingCartForm/>
+       <Deliveri/>
+    </ShopPageConteiner>
   )
 }
 

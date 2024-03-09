@@ -1,27 +1,43 @@
 import React from 'react'
-import { RightSideBarContainer, RightSideBarList } from './RightSideBar.styled'
+import { NothingTitle, RightSideBarContainer, RightSideBarList } from './RightSideBar.styled'
+import { allPreparationsSelector, selectAddPreparation } from '../../redax/catalogSelector';
+import { useDispatch, useSelector } from 'react-redux';
+import { addPreparation, removePreparation } from '../../redax/catalogSlice';
 
 
 const RightSideBar = () => {
+const dispatch = useDispatch();
+  const preparation = useSelector(allPreparationsSelector);
+  const delCart = useSelector(selectAddPreparation);
+
+  const addToCart = (id) => {
+    const foundItem = delCart.find(item => item.id === id);
+  
+    if (!foundItem) {
+      // Если товара нет в корзине, добавляем его с количеством 1
+      dispatch(addPreparation({ id: id, quantity: 1 }));
+    } else {
+      // Если товар уже есть в корзине, увеличиваем его количество на 1
+      dispatch(removePreparation({ id: id, quantity: foundItem.quantity + 1 }));
+    }
+  }
+
+
   return (
     <RightSideBarContainer>
+       {preparation.length !==0? 
     <RightSideBarList>
-        <li>
-        <img src='https://root.tblcdn.com/img/goods/38cdd884-0747-4b43-9c7d-a0c20c5da253/1/img_0.jpg?v=AAAAAAoeI0Q'alt='pharacetomol'></img>
-        <h1>Paracetomol</h1>
-        <button>Add to card</button>
-        </li>
-        <li>
-        <img src='https://root.tblcdn.com/img/goods/38cdd884-0747-4b43-9c7d-a0c20c5da253/1/img_0.jpg?v=AAAAAAoeI0Q' alt='pharacetomol'></img>
-        <h1>Paracetomol</h1>
-        <button>Add to card</button>
-        </li>
-        <li>
-        <img src='https://root.tblcdn.com/img/goods/38cdd884-0747-4b43-9c7d-a0c20c5da253/1/img_0.jpg?v=AAAAAAoeI0Q' alt='pharacetomol'></img>
-        <h1>Paracetomol</h1>
-        <button>Add to card</button>
-        </li>
-    </RightSideBarList>
+    {preparation.map(e => (
+						<li key={e._id}>
+               <img src={e.photo} alt={e.name}></img>
+        <div>
+          <p>{e.name}</p>
+          <button onClick={()=>addToCart(e._id)}>add to Card</button>
+        </div>
+              </li>
+					))}
+    </RightSideBarList>:
+    <NothingTitle>Please, choose a pharmacy.</NothingTitle>}
    </RightSideBarContainer>
   )
 }
