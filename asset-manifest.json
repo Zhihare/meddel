@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/meddel/static/css/main.036674bc.css",
-    "main.js": "/meddel/static/js/main.68f26eda.js",
+    "main.css": "/meddel/static/css/main.58fda9ed.css",
+    "main.js": "/meddel/static/js/main.0036f2c7.js",
     "static/js/453.2a53a369.chunk.js": "/meddel/static/js/453.2a53a369.chunk.js",
     "index.html": "/meddel/index.html",
-    "main.036674bc.css.map": "/meddel/static/css/main.036674bc.css.map",
-    "main.68f26eda.js.map": "/meddel/static/js/main.68f26eda.js.map",
+    "main.58fda9ed.css.map": "/meddel/static/css/main.58fda9ed.css.map",
+    "main.0036f2c7.js.map": "/meddel/static/js/main.0036f2c7.js.map",
     "453.2a53a369.chunk.js.map": "/meddel/static/js/453.2a53a369.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.036674bc.css",
-    "static/js/main.68f26eda.js"
+    "static/css/main.58fda9ed.css",
+    "static/js/main.0036f2c7.js"
   ]
 }
