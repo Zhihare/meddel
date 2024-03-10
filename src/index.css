@@ -71,7 +71,8 @@ label {
 }
 
 body {
-  margin: 0, auto;
+  margin: 0 auto;
+  padding: 20px;
   max-width: 1400px;
 
 }

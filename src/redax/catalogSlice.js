@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { getCatalogPharms, getOnePreparation, getPreparation } from './catalogThank';
+import { addOrder, getCatalogPharms, getOnePreparation, getPreparation } from './catalogThank';
 
 const initialState = {
 	Pharmacys: [],
@@ -38,16 +38,18 @@ const catalogSlice = createSlice({
 			state.addPreparations.push(action.payload);
 		},
 
+        clearOrderCart(state, action){
+            state.addPreparations = [];
+        },
+
 		removePreparation(state, action) {
             const existingPreparation = state.addPreparations.find(
-                preparation => preparation.id === action.payload.id
+                preparation => preparation.preparationID === action.payload.preparationID
               );
             
               if (existingPreparation) {
-                // Если элемент с указанным id существует, обновляем его
                 existingPreparation.quantity = action.payload.quantity;
               } else {
-                // Если элемент с указанным id не найден, добавляем новый
                 state.addPreparations.push(action.payload);
               }
             },
@@ -95,7 +97,8 @@ const catalogSlice = createSlice({
 				isAnyOf(
 					getCatalogPharms.pending,
 					getPreparation.pending,
-                    getOnePreparation.pending
+                    getOnePreparation.pending,
+                    addOrder.pending
 				), state => {
 					state.isLoading = true;
 				})
@@ -103,7 +106,9 @@ const catalogSlice = createSlice({
 				isAnyOf(
 					getCatalogPharms.rejected,
 					getPreparation.rejected,
-                    getOnePreparation.rejected
+                    getOnePreparation.rejected,
+                    addOrder.rejected,
+
 				), (state, action) => {
 					state.isLoading = false;
 					state.error = action.payload;
@@ -112,4 +117,4 @@ const catalogSlice = createSlice({
 });
 
 export const catalogReducer = catalogSlice.reducer;
-export const { addPreparation, setPharmacys, setPreparation, removePreparation, setIsLoading, setFilter, setModal, setModalData, setFavorites } = catalogSlice.actions;
+export const { addPreparation, clearOrderCart, setPharmacys, setPreparation, removePreparation, setIsLoading, setFilter, setModal, setModalData, setFavorites } = catalogSlice.actions;

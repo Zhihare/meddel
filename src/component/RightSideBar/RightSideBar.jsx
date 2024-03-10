@@ -11,14 +11,14 @@ const dispatch = useDispatch();
   const delCart = useSelector(selectAddPreparation);
 
   const addToCart = (id) => {
-    const foundItem = delCart.find(item => item.id === id);
+    const foundItem = delCart.find(item => item.preparationID === id);
   
     if (!foundItem) {
       // Если товара нет в корзине, добавляем его с количеством 1
-      dispatch(addPreparation({ id: id, quantity: 1 }));
+      dispatch(addPreparation({ preparationID: id, quantity: 1 }));
     } else {
       // Если товар уже есть в корзине, увеличиваем его количество на 1
-      dispatch(removePreparation({ id: id, quantity: foundItem.quantity + 1 }));
+      dispatch(removePreparation({ preparationID: id, quantity: foundItem.quantity + 1 }));
     }
   }
 

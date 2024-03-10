@@ -25,8 +25,19 @@ export const getPreparation = createAsyncThunk(
             return thunkAPI.rejectWithValue(e.message);
         }
     }
-)
+);
 
+export const addOrder = createAsyncThunk(
+    "catalog/postOrder",
+    async (newOrder, thunkAPI)=>{
+        try{
+            const response = await axios.post(`/orders`, newOrder);
+			return response.data;
+        }catch(e){
+            return thunkAPI.rejectWithValue(e.message);
+        }
+    }
+);
 
 
 export const getOnePreparation = createAsyncThunk(

@@ -3,8 +3,8 @@ import { DelContainer, DelItem, DelList } from './Delivery.styled'
 import { TotalPrice } from '../ShopingCardForm/ShopingCartForm.styled'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAddPreparation } from '../../redax/catalogSelector'
-import { getCatalogPharms, getOnePreparation } from '../../redax/catalogThank'
-import { removePreparation, setIsLoading } from '../../redax/catalogSlice'
+import { getOnePreparation } from '../../redax/catalogThank'
+import { removePreparation } from '../../redax/catalogSlice'
 
 const Deliveri = () => {
 const dispatch = useDispatch();
@@ -15,18 +15,19 @@ const delCart = useSelector(selectAddPreparation);
 useEffect(() => {
     const findById = async () => {
       const promises = delCart.map(async (item) => {
-        const preparation = { ...(await dispatch(getOnePreparation(item.id))), quantity: item.quantity };
+        const preparation = { ...(await dispatch(getOnePreparation(item.preparationID))), quantity: item.quantity };
         return preparation;
       });
   
       const preparations = await Promise.all(promises);
       setpreparationInCart(preparations);
+    
     };
   
     findById();
   }, [dispatch, delCart]);
   
-  
+
   const totalPrice = preparationInCart.reduce((total, e) => {
     return total + e.quantity * e.payload.price;
   }, 0);
@@ -35,7 +36,9 @@ useEffect(() => {
   return (
     <DelContainer>
         <DelList>
-        {preparationInCart.map((e, index) => (
+        {(preparationInCart.length === 0)? 
+        <p>You haven't added anything yet</p>:
+        preparationInCart.map((e, index) => (
             <DelItem key={e.payload._id}>
                 <img src= {e.payload.photo} alt={e.payload.name} />
                 <div>
@@ -49,7 +52,7 @@ useEffect(() => {
                           updatedPreparations[index].quantity = event.target.value;
                           return updatedPreparations;
                         });
-                        dispatch(removePreparation({ id: e.payload._id, quantity: event.target.value }));
+                        dispatch(removePreparation({ preparationID: e.payload._id, quantity: event.target.value }));
                       }}/>
                 </div>	
             </DelItem>

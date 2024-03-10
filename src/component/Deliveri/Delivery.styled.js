@@ -5,8 +5,12 @@ export const DelContainer = styled.div`
 @media(max-width: 600px){
     height: fit-content;
     width: 100%;
+    padding: 20px;
+
+  
 }
 font-size: 20px;
+min-width: 340px;
 width: 700px;
 height: 500px;
 margin-bottom: 10px;
@@ -35,11 +39,12 @@ gap: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     img{
-        width: 400px;
-        height: 160px;
-        border: solid 2px #777777;
-        border-radius: 15px;
-        object-fit: contain;
+        min-width: 100px;
+    width: 400px;
+    height: 160px;
+    border: solid 2px #777777;
+    border-radius: 15px;
+    object-fit: cover;
     }
     
     div{
@@ -61,6 +66,7 @@ gap: 20px;
     }
 
     input{
+        width: 100%;
         text-align: center;
         height: 40px;
     padding: 10px;

@@ -1,10 +1,34 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useState } from 'react';
+import { Bounce, toast } from 'react-toastify';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { ErrorMessege, FormContainer } from './ShopingCartForm.styled';
+import { Button, ErrorMessege, FormContainer } from './ShopingCartForm.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAddPreparation } from '../../redax/catalogSelector';
+import { addOrder } from '../../redax/catalogThank';
+import { clearOrderCart } from '../../redax/catalogSlice';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Deliveri = () => {
+    const notify = () => toast('👌 Your order has been placed!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+
+
+    const dispatch = useDispatch();
+    const [delivery , setDelivery] = useState([]);
+   
+    const delCart = useSelector(selectAddPreparation);
+   
+
   const initialValues = {
     name: '',
     phone: '',
@@ -20,9 +44,32 @@ const Deliveri = () => {
   });
 
   const onSubmit = (values) => {
-    // Handle form submission here
-    console.log(values);
+    setDelivery({
+      name: values.name,
+      email: values.email,
+      phone: values.phone,
+      adress: values.address,
+      order: delCart,
+    });
   };
+
+  useEffect(() => {
+    const submitOrder = async () => {
+      try {
+     console.log(delivery);
+        if (Object.keys(delivery).length > 0) {
+          await dispatch(addOrder(delivery));
+          await dispatch(clearOrderCart());
+          notify();
+        }
+      } catch (error) {
+        console.error('Error submitting order:', error);
+       
+      }
+    };
+
+    submitOrder(); 
+  }, [delivery, dispatch]);
 
   const formik = useFormik({
     initialValues,
@@ -81,7 +128,8 @@ const Deliveri = () => {
        
       </div>
 
-      <button type="submit">Submit</button>
+      <Button type="submit">Submit</Button>
+   
     </FormContainer>
   );
 };

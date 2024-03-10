@@ -3,10 +3,10 @@ import LeftSideBar from '../component/LeftSideBar/LeftSideBar'
 import RightSideBar from '../component/RightSideBar/RightSideBar'
 import { ShopPageConteiner } from './ShopPage.styled'
 import { useDispatch, useSelector } from 'react-redux'
-import { allPreparationsSelector, catalogSelector, selectIsLoading } from '../redax/catalogSelector'
+import { catalogSelector} from '../redax/catalogSelector'
 import { setIsLoading } from '../redax/catalogSlice'
-import { getCatalogPharms, getPreparation } from '../redax/catalogThank'
-import { fetchPharmacy } from '../services/api'
+import { getCatalogPharms } from '../redax/catalogThank'
+
 
 const ShopPage = () => {
     const dispatch = useDispatch();
