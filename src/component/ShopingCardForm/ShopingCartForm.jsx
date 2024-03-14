@@ -10,7 +10,8 @@ import { clearOrderCart } from '../../redax/catalogSlice';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Deliveri = () => {
-    const notify = () => toast('👌 Your order has been placed!', {
+    const notify = () => toast('👌 Your order has been placed!',
+     {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -20,7 +21,7 @@ const Deliveri = () => {
         progress: undefined,
         theme: "light",
         transition: Bounce,
-        });
+    });
 
 
     const dispatch = useDispatch();

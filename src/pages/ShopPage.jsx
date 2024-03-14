@@ -8,6 +8,7 @@ import { setIsLoading } from '../redax/catalogSlice'
 import { getCatalogPharms } from '../redax/catalogThank'
 
 
+
 const ShopPage = () => {
     const dispatch = useDispatch();
 	const catalogPharm = useSelector(catalogSelector);
@@ -21,11 +22,13 @@ useEffect(() => {
   }, [dispatch, catalogPharm]);
  
 
+
   return (
     <ShopPageConteiner>
     <LeftSideBar/>
     <RightSideBar/>
     </ShopPageConteiner>
+   
   )
 }
 

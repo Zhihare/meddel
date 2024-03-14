@@ -52,6 +52,7 @@ export const getOnePreparation = createAsyncThunk(
     }
 )
 
+
 // export const getCatalogAllCars = createAsyncThunk(
 // 	"catalog/fetchAllCars",
 // 	async (_, thunkAPI) => {

@@ -7,10 +7,19 @@ export const FormContainer = styled.form`
     height: fit-content;
     width: 100%;
     padding: 20px;
+
+  .formHistory{
+    padding: 20px;
+  }
 }
 
 @media(max-width: 700px){
     padding: 10px 20px;
+
+     .formHistory{
+    
+    padding: 10px 20px;
+  }
 }
 
 font-size: 20px;
@@ -20,6 +29,11 @@ margin-bottom: 10px;
 border: solid 2px #777777;
 border-radius: 15px;
 padding: 30px 70px;
+
+ .formHistory{
+  width: 100%;
+    padding: 30px 25%;
+  }
 
 
 

@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 
 import storage from 'redux-persist/lib/storage';
+import { orderReducer } from './order/orderSlice';
 
 const preparationsConfig = {
 	key: 'catalog',
@@ -19,8 +20,15 @@ const preparationsConfig = {
 	whitelist: ['addPreparations'],
 };
 
+const ordersConfig = {
+	key: 'order',
+	storage,
+	whitelist: ['orderData'],
+}
+
 const rootReducer = combineReducers({
 	catalog: persistReducer(preparationsConfig, catalogReducer),
+	order: persistReducer(ordersConfig, orderReducer),
 });
 
 export const store = configureStore({

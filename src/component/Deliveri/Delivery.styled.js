@@ -27,6 +27,8 @@ margin: 20px;
 
 export const DelItem = styled.li`
 display: flex;
+align-items: center;
+
 gap: 20px;
     font-size: 24px;
     text-align: center;

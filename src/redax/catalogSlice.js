@@ -87,12 +87,6 @@ const catalogSlice = createSlice({
 			})
 
 
-
-			// .addCase(getFilterCars.fulfilled, (state, action) => {
-			// 	state.error = null;
-			// 	state.filter = action.payload;
-			// })
-
 			.addMatcher(
 				isAnyOf(
 					getCatalogPharms.pending,
