@@ -31,6 +31,10 @@ const orderSlice = createSlice({
             state.isLoading = action.payload;
         },
 
+        setError(state, action){
+            state.error = action.payload;
+        },
+
         clearOrders(state, action){
             state.orderData = [];
         },
@@ -56,6 +60,7 @@ extraReducers: builder => {
                 getAllOrder.rejected
             
             ), (state, action) => {
+                state.orderData = [];
                 state.isLoading = false;
                 state.error = action.payload;
             });

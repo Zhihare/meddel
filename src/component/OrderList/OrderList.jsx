@@ -1,34 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { OrderListContainer } from './OrderList.styled'
 import OrderItem from './OrderItem'
 import { DelList } from '../Deliveri/Delivery.styled'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { ordersSelector } from '../../redax/order/orderSelector'
 
 const OrderList = () => {
-  const dispatch = useDispatch();
+  const orders = useSelector(ordersSelector);
 
-  // const orders = useSelector();
-  
-
-  // useEffect(() => {
-  //   const findById = async () => {
-  //     const promises = delCart.map(async (item) => {
-  //       const preparation = { ...(await dispatch(getOnePreparation(item.preparationID))), quantity: item.quantity };
-  //       return preparation;
-  //     });
-  
-  //     const preparations = await Promise.all(promises);
-  //     setpreparationInCart(preparations);
-    
-  //   };
-  
-  //   findById();
-  // }, [dispatch, delCart]);
 
   return (
     <OrderListContainer>
         <DelList>
-       <OrderItem/>
+        {orders.map(e => (
+           <OrderItem key={e.id} preparation={e.preparation} total={e.total}/>
+					
+					))}
+      
         </DelList>
         </OrderListContainer>
   )

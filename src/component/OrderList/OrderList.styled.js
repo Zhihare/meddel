@@ -10,6 +10,7 @@ export const OrderListContainer = styled.div`
 font-size: 20px;
 
 width: 100%;
+
 margin-bottom: 10px;
 border: solid 2px #777777;
 border-radius: 15px;

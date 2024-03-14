@@ -1,38 +1,25 @@
 import React from 'react'
-import { DelItem } from '../Deliveri/Delivery.styled'
 import { OrderItemCart, OrderItemContainer, OrderItemList, OrderItemPhoto, OrderItemTotalPrice } from './OrderItem.styled'
 
-const OrderItem = () => {
+const OrderItem = ({preparation, total}) => {
+
+
   return (
     <OrderItemContainer>
         <OrderItemList>
-        <OrderItemCart>
-                <OrderItemPhoto className='itemCartPhoto' src="https://root.tblcdn.com/img/goods/380c375b-7547-4025-bb30-70feba3c613e/1/img_0.jpg?v=AAAAAAnuTuk" alt="Paracetomol" />
+        {preparation.map(e => (
+        <OrderItemCart key={e.preparation._id}>
+                <OrderItemPhoto className='itemCartPhoto' src={e.preparation.photo} alt={e.preparation.name} />
                 <div>
-                    <h2>Paracetomol</h2>
-                    <p className='orderItemPrice'>price: 100 </p>
-                    <p className='orderItemPrice'>quality: 4</p>
+                    <h2>{e.preparation.name}</h2>
+                    <p className='orderItemPrice'>price: {e.preparation.price} </p>
+                    <p className='orderItemPrice'>quality: {e.quantity}</p>
                 </div>
             </OrderItemCart>
-            <OrderItemCart>
-                <OrderItemPhoto className='itemCartPhoto' src="https://root.tblcdn.com/img/goods/380c375b-7547-4025-bb30-70feba3c613e/1/img_0.jpg?v=AAAAAAnuTuk" alt="Paracetomol" />
-                <div>
-                    <h2>Paracetomol</h2>
-                    <p className='orderItemPrice'>price: 100 </p>
-                    <p className='orderItemPrice'>quality: 4</p>
-                </div>
-            </OrderItemCart>
-            <OrderItemCart>
-                <OrderItemPhoto className='itemCartPhoto' src="https://root.tblcdn.com/img/goods/380c375b-7547-4025-bb30-70feba3c613e/1/img_0.jpg?v=AAAAAAnuTuk" alt="Paracetomol" />
-                <div>
-                    <h2>Paracetomol</h2>
-                    <p className='orderItemPrice'>price: 100 </p>
-                    <p className='orderItemPrice'>quality: 4</p>
-                </div>
-            </OrderItemCart>
+        ))}
            
         </OrderItemList>
-        <OrderItemTotalPrice>Total price: 900</OrderItemTotalPrice>
+        <OrderItemTotalPrice>Total price: {total}</OrderItemTotalPrice>
     </OrderItemContainer>
   )
 }

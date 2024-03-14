@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { emailSelector, phoneSelector } from '../../redax/order/orderSelector';
 import { setEmail, setPhone } from '../../redax/order/orderSlice';
 import { getAllOrder } from '../../redax/order/orderThank';
-import { getDefaultNormalizer } from '@testing-library/react';
+
 
 
 
@@ -19,12 +19,14 @@ const HistoryPageForm = () => {
 
    const email = useSelector(emailSelector);
    const phone = useSelector(phoneSelector);
-  const client = {email: 'vladislav.zhihar@gmail.com', phone: '0935742122'};
-  console.log(client);
+
+
+ 
    useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      dispatch(getAllOrder(client)); // Отправить данные на сервер
-    }, 5000);
+    const client = {email: email, phone: phone};
+    const timeoutId =  setTimeout(() => {
+      dispatch(getAllOrder(client)); 
+    }, 2000);
     
     return () => clearTimeout(timeoutId);
   }, [dispatch, email, phone]);
@@ -34,7 +36,6 @@ const HistoryPageForm = () => {
  const initialValues = {
     email: email,
     phone: phone,
-  
   
  };
 
@@ -49,7 +50,7 @@ const HistoryPageForm = () => {
   const value = event.target.value;
   const timeoutId = setTimeout(() => {
     dispatch(setEmail(value));
-  }, 3000);
+  }, 2000);
   setEmailTimeout(timeoutId);
 };
 
@@ -58,7 +59,7 @@ const handlePhoneChange = (event) => {
     const value = event.target.value;
     const timeoutId = setTimeout(() => {
       dispatch(setPhone(value));
-    }, 3000);
+    }, 2000);
     setPhoneTimeout(timeoutId);
 };
 

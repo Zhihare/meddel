@@ -57,7 +57,7 @@ const Deliveri = () => {
   useEffect(() => {
     const submitOrder = async () => {
       try {
-     console.log(delivery);
+
         if (Object.keys(delivery).length > 0) {
           await dispatch(addOrder(delivery));
           await dispatch(clearOrderCart());

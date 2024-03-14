@@ -23,7 +23,7 @@ export const RightSideBarList = styled.ul`
 
 display: flex;
 flex-wrap: wrap;
-gap: 50px;
+gap: 40px;
 margin: 30px 70px;
 
 
