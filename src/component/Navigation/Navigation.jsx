@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavigationNav } from './Navigation.styled'
 import { NavLink } from 'react-router-dom'
 
-const Navigation = () => {
-  return (
-    <NavigationNav>
+const Navigation = ({ status }) => {
+	const [isOpen, setIsOpen] = useState(true);
+	
+	useEffect(() => {
+    setIsOpen(status);
+	}, [status]);
+	
+
+	return (
+		<NavigationNav className={isOpen ? 'active' : ''}>
 			<NavLink activeclassname="active" to="/">
 				Shop
 			</NavLink>

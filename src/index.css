@@ -74,8 +74,13 @@ body {
   margin: 0 auto;
   padding: 20px;
   max-width: 1400px;
-
 }
+
+        @media(max-width: 600px) {
+          body {
+            margin-top: 60px;
+          }
+        }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

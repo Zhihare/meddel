@@ -5,17 +5,13 @@ export const HeaderSection = styled.header`
 
 @media(max-width: 600px){
 	background-color: white;
-	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
 	position: fixed;
     z-index: 10;
-    bottom: 0;
+    top: 0;
     left: 0;
 	height: 60px;
 width:100%;
-display: flex;
-justify-content:center;
-align-items: center;
-color: black;
 
 	a{
         border: none;
@@ -36,14 +32,12 @@ color: black;
     margin-left: auto;
 	color: var(----button-color-hover);
 	padding: 15px 0; 
-	/* border-bottom: 1px solid grey; */
+	
 }
 `
 
 export const LogoConteiner = styled.div`
-@media(max-width: 600px){
-	display: none;
-}
+
 margin-left: 20px;
 
 p{
@@ -68,8 +62,44 @@ span{
 
 export const Navigation = styled.div`
 @media(max-width: 600px){
-	margin: auto;
-	
+	margin: auto;	
 }
 	margin: auto 20px auto 0;
+`
+
+
+export const NavigationMobileButton = styled.button`
+  display: none;
+
+  @media(max-width: 600px){
+	position: absolute;
+	top: 0;
+    right: 0;
+    display: block;
+    margin-left: auto;
+    padding-right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    transition: all 1s ease-in-out; 
+    
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+	}
+`
+export const BackDrop = styled.div`
+&&.active{
+	position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 292px;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000a1;
+	padding: 0;
+	z-index: 100;
+}
 `
