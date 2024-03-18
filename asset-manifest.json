@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/meddel/static/css/main.0a4a8521.css",
-    "main.js": "/meddel/static/js/main.450387f6.js",
+    "main.css": "/meddel/static/css/main.f9eb4b0f.css",
+    "main.js": "/meddel/static/js/main.9e158b81.js",
     "static/js/453.2a53a369.chunk.js": "/meddel/static/js/453.2a53a369.chunk.js",
+    "static/media/teymurova_pasta_1145h335_1_1.png": "/meddel/static/media/teymurova_pasta_1145h335_1_1.064468242dc8d96250e8.png",
+    "static/media/ul-lisobakt-stomatidin-detrimax_am-lekfarm_baner-1920x450_2024-01-19-1920x450category_image.webp": "/meddel/static/media/ul-lisobakt-stomatidin-detrimax_am-lekfarm_baner-1920x450_2024-01-19-1920x450category_image.03a19c1a38aac20edaa7.webp",
+    "static/media/1920x450_v2-1920x450category_image.webp": "/meddel/static/media/1920x450_v2-1920x450category_image.0950bf3d67ccdafbe4f5.webp",
+    "static/media/mkrlx_1920h450px_akcia(1)-1920x450category_image.webp": "/meddel/static/media/mkrlx_1920h450px_akcia(1)-1920x450category_image.1e97812e4fed15486105.webp",
+    "static/media/listovkazest+pozitivwebdma.ua.zes24.02.01_montazhnajaoblast1kopija-1920x450category_image.webp": "/meddel/static/media/listovkazest+pozitivwebdma.ua.zes24.02.01_montazhnajaoblast1kopija-1920x450category_image.b0b65d1a4e855a0298b4.webp",
+    "static/media/1920x450_motiligas(1)-1920x450category_image.webp": "/meddel/static/media/1920x450_motiligas(1)-1920x450category_image.2fb37b09bfb3e55fa99c.webp",
+    "static/media/slick.svg": "/meddel/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/meddel/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/meddel/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/meddel/index.html",
-    "main.0a4a8521.css.map": "/meddel/static/css/main.0a4a8521.css.map",
-    "main.450387f6.js.map": "/meddel/static/js/main.450387f6.js.map",
+    "static/media/slick.woff": "/meddel/static/media/slick.295183786cd8a1389865.woff",
+    "main.f9eb4b0f.css.map": "/meddel/static/css/main.f9eb4b0f.css.map",
+    "main.9e158b81.js.map": "/meddel/static/js/main.9e158b81.js.map",
     "453.2a53a369.chunk.js.map": "/meddel/static/js/453.2a53a369.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a4a8521.css",
-    "static/js/main.450387f6.js"
+    "static/css/main.f9eb4b0f.css",
+    "static/js/main.9e158b81.js"
   ]
 }
