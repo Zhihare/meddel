@@ -9,15 +9,16 @@ export const LeftSideBarContainer = styled.div`
 height: 100vh;
 width: 400px;
 margin-bottom: 20px;
-border: solid 2px #777777;
-border-radius: 15px;
+background-color: rgb(242 242 242);
+border-radius: 5px;
 `
 
 export const LeftSideBarTitle = styled.h2`
 
-width: fit-content;
-margin: 20px auto;
-font-size: 18px;
+    padding: 20px 10px;
+    font-size: 16px;
+    padding-bottom: 10px;
+    background-color: white;
 `
 
 
@@ -43,12 +44,10 @@ li{
     font-size: 24px;
     list-style: none;
     text-align: center;
-    margin: 20px auto;
-    padding: 20px 0;
-
-    border: solid 2px #777777;
-    border-radius: 15px;
-    width: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-bottom: solid 2px #ffffff;
+    width: 100%;
    
 }
 li:hover{

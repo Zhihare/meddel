@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { catalogSelector} from '../redax/catalogSelector'
 import { setIsLoading } from '../redax/catalogSlice'
 import { getCatalogPharms } from '../redax/catalogThank'
+import Sliders from '../component/slider/Sliders'
+
 
 
 
@@ -24,11 +26,13 @@ useEffect(() => {
 
 
   return (
+    <>
+      <Sliders/>
     <ShopPageConteiner>
     <LeftSideBar/>
     <RightSideBar/>
     </ShopPageConteiner>
-   
+   </>
   )
 }
 

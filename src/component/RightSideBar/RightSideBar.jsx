@@ -1,8 +1,9 @@
 import React from 'react'
-import { NothingTitle, RightSideBarContainer, RightSideBarList } from './RightSideBar.styled'
+import { Backdrop, NameSection, NothingTitle, RightSideBarContainer, RightSideBarList } from './RightSideBar.styled'
 import { allPreparationsSelector, selectAddPreparation } from '../../redax/catalogSelector';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPreparation, removePreparation } from '../../redax/catalogSlice';
+
 
 
 const RightSideBar = () => {
@@ -14,14 +15,12 @@ const dispatch = useDispatch();
     const foundItem = delCart.find(item => item.preparationID === id);
   
     if (!foundItem) {
-      // Если товара нет в корзине, добавляем его с количеством 1
       dispatch(addPreparation({ preparationID: id, quantity: 1 }));
     } else {
-      // Если товар уже есть в корзине, увеличиваем его количество на 1
       dispatch(removePreparation({ preparationID: id, quantity: foundItem.quantity + 1 }));
     }
   }
-
+  console.log(preparation);
 
   return (
     <RightSideBarContainer>
@@ -29,11 +28,14 @@ const dispatch = useDispatch();
     <RightSideBarList>
     {preparation.map(e => (
 						<li key={e._id}>
-               <img src={e.photo} alt={e.name}></img>
-        <div>
+        <img src={e.photo} alt={e.name}></img>
+        <Backdrop>
+          <p>{e.name}</p>
+        </Backdrop>
+        <NameSection>
           <p>{e.name}</p>
           <button onClick={()=>addToCart(e._id)}>add to Card</button>
-        </div>
+        </NameSection>
               </li>
 					))}
     </RightSideBarList>:

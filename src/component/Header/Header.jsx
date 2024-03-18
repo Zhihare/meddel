@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BackDrop, HeaderSection, Navigation, NavigationMobileButton } from './Header.styled'
+import { BackDrop, HeaderSection, Logo, Navigation, NavigationMobileButton } from './Header.styled'
 import Navigator from '../Navigation/Navigation';
 import { FiAlignJustify } from "react-icons/fi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -25,9 +25,16 @@ const Header = () => {
 	
 	return (
 		<>
-	<HeaderSection>
+			<HeaderSection>
+				<Logo>
+					<img src="https://cdn.icon-icons.com/icons2/1465/PNG/512/740pill_100923.png" alt="logo" />
+					<p>MedDel</p>
+					</Logo>
 		<Navigation>
-				<Navigator status={isOpen} />
+					{window.innerWidth < 600 ? (
+						<Navigator onClick={chengeClassName} status={isOpen} />
+					) : (
+						<Navigator status={isOpen} />)}
 				{!isOpen ?
 					<NavigationMobileButton onClick={chengeClassName}>
 						<FiAlignJustify />

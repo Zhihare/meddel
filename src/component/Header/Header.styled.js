@@ -12,6 +12,7 @@ export const HeaderSection = styled.header`
     left: 0;
 	height: 60px;
 width:100%;
+padding: 15px 0;
 
 	a{
         border: none;
@@ -39,7 +40,6 @@ width:100%;
 export const LogoConteiner = styled.div`
 
 margin-left: 20px;
-
 p{
 	font-family: "Poppins", sans-serif;
     font-weight: 200;
@@ -59,6 +59,22 @@ span{
 }
 
 `
+export const Logo = styled.div`
+display: flex;
+align-items: center;
+
+ font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+	img{
+	    width: 40px;
+}
+
+p{
+	color:#4993c9;
+}
+`
 
 export const Navigation = styled.div`
 @media(max-width: 600px){
@@ -73,7 +89,7 @@ export const NavigationMobileButton = styled.button`
 
   @media(max-width: 600px){
 	position: absolute;
-	top: 0;
+	top: 8px;
     right: 0;
     display: block;
     margin-left: auto;
@@ -95,11 +111,10 @@ export const BackDrop = styled.div`
 	position: fixed;
     top: 0;
     left: 0;
-    margin-top: 292px;
 	width: 100vw;
 	height: 100vh;
 	background-color: #000000a1;
 	padding: 0;
-	z-index: 100;
+	z-index: 5;
 }
 `

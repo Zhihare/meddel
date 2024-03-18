@@ -46,7 +46,7 @@ gap: 20px;
     height: 160px;
     border: solid 2px #777777;
     border-radius: 15px;
-    object-fit: cover;
+    object-fit: contain;
     }
     
     div{

@@ -18,7 +18,7 @@ const LeftSideBar = () => {
 
   return (
    <LeftSideBarContainer>
-    <LeftSideBarTitle>Shops:</LeftSideBarTitle>
+    <LeftSideBarTitle>Shops</LeftSideBarTitle>
     <LeftSideBarList>
     
         {catalogPharm.map(e => (
