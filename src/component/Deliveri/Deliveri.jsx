@@ -34,7 +34,7 @@ useEffect(() => {
 
 
   return (
-    <DelContainer>
+    <DelContainer id='style-3'>
         <DelList>
         {(preparationInCart.length === 0)? 
         <p>You haven't added anything yet</p>:

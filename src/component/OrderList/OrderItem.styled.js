@@ -14,7 +14,6 @@ position: relative;
     height: 320px;
     overflow: hidden;
 
-    border: solid 2px #777777;
     border-radius: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
@@ -74,7 +73,9 @@ export const OrderItemCart = styled.li`
     overflow-y: auto;
     width: 360px;
     padding: 10px;
-
+ @media(max-width: 600px){
+    font-size: 16px;
+ }
     @media(max-width: 800px){
     display: inline-block;
     width: 100%;
@@ -108,9 +109,8 @@ export const OrderItemPhoto = styled.img`
     min-width: 100px;
     width: 250px;
     height: 160px;
-    border: solid 2px #777777;
-    border-radius: 15px;
     object-fit: contain;
+    margin-right: auto ;
 
 `
 

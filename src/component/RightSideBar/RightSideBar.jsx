@@ -20,7 +20,6 @@ const dispatch = useDispatch();
       dispatch(removePreparation({ preparationID: id, quantity: foundItem.quantity + 1 }));
     }
   }
-  console.log(preparation);
 
   return (
     <RightSideBarContainer>

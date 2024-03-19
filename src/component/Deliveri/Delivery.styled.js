@@ -2,23 +2,36 @@ import styled from "styled-components";
 
 export const DelContainer = styled.div`
 
-@media(max-width: 600px){
+@media(max-width: 800px){
     height: fit-content;
     width: 100%;
-    padding: 20px;
 
   
 }
 font-size: 20px;
-min-width: 340px;
-width: 700px;
+width: calc((100% / 2) + 70px);
 height: 500px;
 margin-bottom: 10px;
-border: solid 2px #777777;
-border-radius: 15px;
 
 overflow: hidden;
 overflow-y: auto;
+
+&#style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: white;
+}
+
+&#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: white;
+}
+
+&#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #777777;
+}
 `
 
 export const DelList = styled.ul`
@@ -35,17 +48,13 @@ gap: 20px;
     margin: 20px 0;
     padding: 20px;
 
-    border: solid 2px #777777;
-    border-radius: 15px;
     width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     img{
-        min-width: 100px;
-    width: 400px;
+    min-width: 100px;
+    width: calc(100%/2);
     height: 160px;
-    border: solid 2px #777777;
-    border-radius: 15px;
     object-fit: contain;
     }
     
@@ -58,6 +67,7 @@ gap: 20px;
     }
 
     h2{
+        font-size: 18px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -68,7 +78,7 @@ gap: 20px;
     }
 
     input{
-        width: 100%;
+        width: calc(80%);
         text-align: center;
         height: 40px;
     padding: 10px;

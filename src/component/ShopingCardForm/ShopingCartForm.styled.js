@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
 
-@media(max-width: 600px){
+@media(max-width: 800px){
     height: fit-content;
     width: 100%;
     padding: 20px;
@@ -13,7 +13,7 @@ export const FormContainer = styled.form`
   }
 }
 
-@media(max-width: 700px){
+@media(max-width: 900px){
     padding: 10px 20px;
 
      .formHistory{
@@ -23,12 +23,21 @@ export const FormContainer = styled.form`
 }
 
 font-size: 20px;
+    min-width: 250px;
+    width: calc((100% / 2) - 100px);
+    margin-bottom: 10px;
+    padding: 30px 30px;
 
-width: 700px;
-margin-bottom: 10px;
-border: solid 2px #777777;
-border-radius: 15px;
-padding: 30px 70px;
+ h3{
+   font-size: 20px;
+   width: 100%;
+   margin-bottom: 20px;
+ }
+
+.formHistory{
+  width: 100%;
+    padding: 30px 25%;
+  }
 
  .formHistory{
   width: 100%;
@@ -38,19 +47,20 @@ padding: 30px 70px;
 
 
 div input{
-    width: 100%;
+      width: 100%;
     height: 40px;
     padding: 10px;
     margin-bottom: 25px;
-    border: solid 2px #777777;
-border-radius: 15px;
+    border: none;
+    background-color: rgb(242 242 242);
+    border-radius: 5px;
 }
 
 label {
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+   
 }
 
 `
