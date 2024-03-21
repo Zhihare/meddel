@@ -60,7 +60,6 @@ const ShopingCartPage = () => {
       default:
         setMode(MODES.MOVE)
     }
- 
   }, [mode]);
 
 

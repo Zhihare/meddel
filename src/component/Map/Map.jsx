@@ -59,7 +59,7 @@ function Map({ center, mode, onClickTogle, markers, onMarkerAdd, adressAdd }) {
                 adressAdd(address);
             })
         };
-        }, [mode]);
+        }, [mode, onMarkerAdd, adressAdd]);
 
   return  (
       <GoogleMap
