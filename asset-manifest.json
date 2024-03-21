@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/meddel/static/css/main.f9eb4b0f.css",
-    "main.js": "/meddel/static/js/main.e5a9ba3f.js",
+    "main.js": "/meddel/static/js/main.9c70b751.js",
     "static/js/453.2a53a369.chunk.js": "/meddel/static/js/453.2a53a369.chunk.js",
     "static/media/teymurova_pasta_1145h335_1_1.png": "/meddel/static/media/teymurova_pasta_1145h335_1_1.064468242dc8d96250e8.png",
     "static/media/ul-lisobakt-stomatidin-detrimax_am-lekfarm_baner-1920x450_2024-01-19-1920x450category_image.webp": "/meddel/static/media/ul-lisobakt-stomatidin-detrimax_am-lekfarm_baner-1920x450_2024-01-19-1920x450category_image.03a19c1a38aac20edaa7.webp",
@@ -15,11 +15,11 @@
     "index.html": "/meddel/index.html",
     "static/media/slick.woff": "/meddel/static/media/slick.295183786cd8a1389865.woff",
     "main.f9eb4b0f.css.map": "/meddel/static/css/main.f9eb4b0f.css.map",
-    "main.e5a9ba3f.js.map": "/meddel/static/js/main.e5a9ba3f.js.map",
+    "main.9c70b751.js.map": "/meddel/static/js/main.9c70b751.js.map",
     "453.2a53a369.chunk.js.map": "/meddel/static/js/453.2a53a369.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f9eb4b0f.css",
-    "static/js/main.e5a9ba3f.js"
+    "static/js/main.9c70b751.js"
   ]
 }
