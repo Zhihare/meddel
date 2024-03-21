@@ -1,12 +1,11 @@
 import React from 'react'
 import { OrderItemCart, OrderItemContainer, OrderItemList, OrderItemPhoto, OrderItemTotalPrice } from './OrderItem.styled'
 
-const OrderItem = ({preparation, total}) => {
-
-
+const OrderItem = ({ preparation, total }) => {
+  
   return (
     <OrderItemContainer>
-        <OrderItemList>
+        <OrderItemList id='style-3'>
         {preparation.map(e => (
         <OrderItemCart key={e.preparation._id}>
                 <OrderItemPhoto className='itemCartPhoto' src={e.preparation.photo} alt={e.preparation.name} />

@@ -48,6 +48,7 @@ li{
     padding: 10px 0;
     border-bottom: solid 2px #ffffff;
     width: 100%;
+    cursor: pointer;
    
 }
 li:hover{

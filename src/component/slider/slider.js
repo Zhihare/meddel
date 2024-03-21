@@ -9,7 +9,7 @@ img{
     @media(max-width: 600px){
         height: 100px;
     }
-    height: 200px;
+    height: 300px;
     width: 100%;
 }
 

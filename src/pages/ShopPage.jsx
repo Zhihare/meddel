@@ -12,8 +12,9 @@ import Sliders from '../component/slider/Sliders'
 
 
 const ShopPage = () => {
-    const dispatch = useDispatch();
-	const catalogPharm = useSelector(catalogSelector);
+  const dispatch = useDispatch();
+  const catalogPharm = useSelector(catalogSelector);
+  
     
 
 useEffect(() => {

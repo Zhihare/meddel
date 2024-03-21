@@ -6,7 +6,6 @@ export const FormContainer = styled.form`
 @media(max-width: 800px){
     height: fit-content;
     width: 100%;
-    padding: 20px;
 
   .formHistory{
     padding: 20px;
@@ -14,19 +13,12 @@ export const FormContainer = styled.form`
 }
 
 @media(max-width: 900px){
-    padding: 10px 20px;
-
+  
      .formHistory{
     
     padding: 10px 20px;
   }
 }
-
-font-size: 20px;
-    min-width: 250px;
-    width: calc((100% / 2) - 100px);
-    margin-bottom: 10px;
-    padding: 30px 30px;
 
  h3{
    font-size: 20px;
@@ -44,13 +36,14 @@ font-size: 20px;
     padding: 30px 25%;
   }
 
-
+div{
+  margin-bottom: 10px;
+}
 
 div input{
       width: 100%;
     height: 40px;
     padding: 10px;
-    margin-bottom: 25px;
     border: none;
     background-color: rgb(242 242 242);
     border-radius: 5px;
@@ -67,7 +60,7 @@ label {
 export const Button = styled.button`
  position: absolute;
     right: 20px;
-    bottom: -100px;
+    bottom: 0;
     width: 250px;
     height: 60px;
     padding: 10px;
@@ -92,13 +85,32 @@ font-size: 14px;
 `
 export const TotalPrice = styled.p`
     position: absolute;
-    bottom: -85px;
-    right: 450px;
+    bottom: 15px;
     color: #777777;
     font-size: 24px;
     font-weight: 600;
 
     @media(max-width: 600px){
         position: static;
+    }
+`
+
+export const LocationList = styled.ul`
+    border: solid 1px black;
+    border-top: none;
+    padding: 5px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+
+    li{
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+    li:hover{
+        background-color: #d3d6de;
     }
 `

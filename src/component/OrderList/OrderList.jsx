@@ -8,11 +8,14 @@ import { ordersSelector } from '../../redax/order/orderSelector'
 const OrderList = () => {
   const orders = useSelector(ordersSelector);
 
+  const ordersReversed = orders.slice().reverse();
+
+  
 
   return (
     <OrderListContainer>
         <DelList>
-        {orders.map(e => (
+        {ordersReversed.map(e => (
            <OrderItem key={e.id} preparation={e.preparation} total={e.total}/>
 					
 					))}

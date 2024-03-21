@@ -8,8 +8,17 @@ import { Suspense } from 'react';
 import Navigation from './component/Navigation/Navigation';
 import Loader from './component/Loader/Loader';
 import Layout from './component/Loyaut/Layout';
+import { useSelector } from 'react-redux';
+import { selectIsLoading } from './redax/catalogSelector';
+import { loadingSelector } from './redax/order/orderSelector';
+
 
 function App() {
+  const isLoading = useSelector(selectIsLoading);
+  const isLoadingOrders = useSelector(loadingSelector);
+
+
+ 
   return (
     <>
       <Suspense fallback={<Loader />}>
@@ -23,6 +32,8 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+      {isLoading && <Loader />}
+      {isLoadingOrders && <Loader/>}
     </>
   );
 }

@@ -73,17 +73,26 @@ const catalogSlice = createSlice({
 	extraReducers: builder => {
 		builder
 			.addCase(getCatalogPharms.fulfilled, (state, action) => {
-				
+				state.isLoading = false;
 				state.error = null;
 				state.Pharmacys = action.payload;
              
 			})
 
 			.addCase(getPreparation.fulfilled, (state, action) => {
-	
+				state.isLoading = false;
 				state.error = null;
 				state.Preparation = action.payload;
           
+			})
+			.addCase(getOnePreparation.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.error = null;
+			})
+
+			.addCase(addOrder.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.error = null;
 			})
 
 

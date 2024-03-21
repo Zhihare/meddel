@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PromoContainer, PromoSlider } from "./slider";
+
 import img from "../../img/promo/1920x450_motiligas(1)-1920x450category_image.webp"
 import img2 from "../../img/promo/mkrlx_1920h450px_akcia(1)-1920x450category_image.webp"
 import img3 from "../../img/promo/teymurova_pasta_1145h335_1_1.png"
@@ -25,7 +26,7 @@ const Sliders = () => {
     { image: img2 },
     { image: img4 },
     { image: img6 },
-      { image: img3 },
+    { image: img3 },
     { image: img5 },
   ]
   return (

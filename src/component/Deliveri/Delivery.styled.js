@@ -10,7 +10,7 @@ export const DelContainer = styled.div`
 }
 font-size: 20px;
 width: calc((100% / 2) + 70px);
-height: 500px;
+height: 100vh;
 margin-bottom: 10px;
 
 overflow: hidden;
@@ -85,4 +85,5 @@ gap: 20px;
     border: solid 2px #777777;
     border-radius: 10px;
     }
+
 `

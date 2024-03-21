@@ -19,7 +19,7 @@ position: relative;
 
     @media(max-width: 800px){
         display: block;
-    height: fit-content;
+        height: fit-content;
         max-height: 320px;
   
 }
@@ -51,7 +51,7 @@ export const OrderItemList = styled.ul`
     column-gap: 20px;
 
     height: 320px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding-top: 70px;
     padding-bottom: 70px;
 
@@ -61,8 +61,31 @@ export const OrderItemList = styled.ul`
         margin-bottom: 20px;
         height: fit-content;
         max-height: 320px;
+        overflow: hidden;
     }
 
+    &#style-3::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: white;
+  
+}
+
+&#style-3::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: white;
+  margin: 60px;
+}
+
+&#style-3::-webkit-scrollbar-thumb
+{
+  background-color: #777777;
+}
+
+&::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Цвет ползунка при ховере */
+}
 
 `
 

@@ -2,14 +2,73 @@ import React, { useEffect, useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Button, ErrorMessege, FormContainer } from './ShopingCartForm.styled';
+import { Button, ErrorMessege, FormContainer, LocationList } from './ShopingCartForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAddPreparation } from '../../redax/catalogSelector';
 import { addOrder } from '../../redax/catalogThank';
 import { clearOrderCart } from '../../redax/catalogSlice';
 import 'react-toastify/dist/ReactToastify.css';
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import useOnclickOutside from "react-cool-onclickoutside";
 
-const Deliveri = () => {
+const Deliveri = ({onSelect, adressInGeo}) => {
+
+  const {
+    ready,
+    value,
+    suggestions: { status, data },
+    setValue,
+    clearSuggestions,
+  } = usePlacesAutocomplete({
+    callbackName: "YOUR_CALLBACK_NAME",
+    requestOptions: {
+      /* Define search scope here */
+    },
+    debounce: 300,
+  });
+  console.log(adressInGeo);
+  const ref = useOnclickOutside(() => {
+    clearSuggestions();
+  });
+
+  const handleInput = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleSelect =
+    ({ description }) =>
+    () => {
+      setValue(description, false);
+      clearSuggestions();
+
+    
+      getGeocode({ address: description }).then((results) => {
+        const { lat, lng } = getLatLng(results[0]);
+        // console.log("📍 Coordinates: ", { lat, lng });
+        onSelect({ lat, lng });
+       
+      });
+    };
+
+  const renderSuggestions = () =>
+    data.map((suggestion) => {
+      const {
+        place_id,
+        structured_formatting: { main_text, secondary_text },
+      } = suggestion;
+
+      return (
+          <li key={place_id} onClick={handleSelect(suggestion)}>
+            <strong>{main_text}</strong> <small>{secondary_text}</small>
+          </li>
+      );
+    });
+
+
+
     const notify = () => toast('👌 Your order has been placed!',
      {
         position: "top-right",
@@ -80,17 +139,23 @@ const Deliveri = () => {
 
   return (
     <FormContainer onSubmit={formik.handleSubmit}>
-        <div>
-        <h3>Enter delivery information</h3>
+        <div ref={ref}>
+       
         <label htmlFor="address">Address:  {formik.errors.address && <ErrorMessege>{formik.errors.address}</ErrorMessege>}</label>
         <input
           type="text"
           id="address"
           name="address"
-          onChange={formik.handleChange}
-          value={formik.values.address}
+          value={adressInGeo.length > 0 ? adressInGeo : value}
+       onChange={(e) => {
+            formik.handleChange(e);
+            handleInput(e); // Виклик вашої власної функції обробника події
+         }}
+        disabled={!ready}
+        // placeholder="Where are you going?"
+          // onChange={formik.handleChange}
         />
-       
+       {status === "OK" && <LocationList>{renderSuggestions()}</LocationList>}
       </div>
       <div>
       
