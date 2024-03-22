@@ -29,7 +29,7 @@ const Deliveri = ({onSelect, adressInGeo}) => {
     },
     debounce: 300,
   });
-  console.log(adressInGeo);
+  
   const ref = useOnclickOutside(() => {
     clearSuggestions();
   });
@@ -47,7 +47,6 @@ const Deliveri = ({onSelect, adressInGeo}) => {
     
       getGeocode({ address: description }).then((results) => {
         const { lat, lng } = getLatLng(results[0]);
-        // console.log("📍 Coordinates: ", { lat, lng });
         onSelect({ lat, lng });
        
       });

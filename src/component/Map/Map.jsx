@@ -1,6 +1,6 @@
 
 import React, { useCallback, useRef } from 'react'
-import { GoogleMap, Marker} from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import { ButtonMap } from './Map.styled';
 import { fetchAddress } from '../utils/geo';
 
@@ -33,9 +33,8 @@ const defoultOptions = {
 
 
 function Map({ center, mode, onClickTogle, markers, onMarkerAdd, adressAdd }) {
-
-
-    
+  
+     
     const mapRef = useRef(undefined);
     
     const onLoad = useCallback(function callback(map) {
@@ -51,15 +50,18 @@ function Map({ center, mode, onClickTogle, markers, onMarkerAdd, adressAdd }) {
         if (mode === MODES.SET_MARKER) {
             const lat = loc.latLng.lat();
             const lng = loc.latLng.lng();
-            console.log({ lat, lng });
+              console.log(lat, lng);
+           if (!isNaN(lat) && !isNaN(lng)) {
             onMarkerAdd({ lat, lng });
             const addressPromise = fetchAddress({ lat, lng });
             addressPromise.then(address => {
-                console.log(address); // Отримано адресу
                 adressAdd(address);
             })
-        };
-        }, [mode, onMarkerAdd, adressAdd]);
+        } else {
+            console.error('Invalid coordinates:', loc.latLng);
+        }
+    }
+}, [mode, onMarkerAdd, adressAdd]);
 
   return  (
       <GoogleMap
@@ -71,7 +73,7 @@ function Map({ center, mode, onClickTogle, markers, onMarkerAdd, adressAdd }) {
           options={defoultOptions}
           onClick={onClick}
       >
-          {mode === MODES.SET_MARKER ? < Marker position={markers} /> : < Marker position={center} />}
+          {mode === MODES.SET_MARKER ? < Marker  position={markers} /> : < Marker position={center} />}
           <ButtonMap onClick={onClickTogle}>Set Marker</ButtonMap>
           <ButtonMap className='clear'>Clear Marker</ButtonMap>
         <></>

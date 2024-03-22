@@ -19,19 +19,22 @@ const KEY = process.env.REACT_APP_API_KEY;
 
 
 
+const LIBRARIES = ['places'];
+
 const ShopingCartPage = () => {
+  
   const [center, setCenter] = useState(defoultCenter);
   const [mode, setMode] = useState(MODES.MOVE);
   const [markers, setMarkers] = useState([]);
   const [adress, setAdress] = useState([]);
   
 
-  const libraries = ['places'];
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: KEY,
-    libraries
+    libraries: LIBRARIES
   })
+
 
   useEffect(() => {
     getBrowserLocation().then((curLoc) => {
@@ -76,7 +79,7 @@ const ShopingCartPage = () => {
   return (
     <ShopPageConteiner>
       <FormContainer>
-      {isLoaded ? <Map center={center} mode={mode} markers={markers} onClickTogle={()=>handleTogleMode()} onMarkerAdd={onMarkerAdd} adressAdd={adressAdd} />:<h2>Loader...</h2>}
+      {isLoaded ? <Map center={center} mode={mode} markers={markers} onClickTogle={handleTogleMode} onMarkerAdd={onMarkerAdd} adressAdd={adressAdd} />:<h2>Loader...</h2>}
         <ShopingCartForm adressInGeo={adress} onSelect={onPlaceSelected} />
         </FormContainer>
        <Deliveri/>

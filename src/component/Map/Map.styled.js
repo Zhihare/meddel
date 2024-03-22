@@ -5,7 +5,7 @@ position: absolute;
 padding: 5px;
 top: 10px;
 right: 100px;
-z-index: 50;
+z-index: 0;
 background-color: white;
 
 &:last-child{
