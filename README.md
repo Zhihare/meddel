@@ -23,9 +23,9 @@ MedDel Test is a web application that allows users to select products from a lis
 ## Backend
 The backend for this project is created using Node.js. The backend server provides the necessary information for the web application.
 
-Backend URL: [https://medicine-delivery-app.onrender.com](deployed to Render)
+Backend URL: https://medicine-delivery-app.onrender.com  deployed to Render
 
-Backend GitHub: [https://github.com/Zhihare/Medicine-Delivery-app]
+Backend GitHub: https://github.com/Zhihare/Medicine-Delivery-app
 
 ## Contributors
 - Zhykhariev Vladislav
